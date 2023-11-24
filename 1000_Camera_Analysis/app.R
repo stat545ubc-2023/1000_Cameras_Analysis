@@ -87,13 +87,7 @@ server <- function(input, output) {
            x = "Maximum Resolution",
            y = "Frequency",
            fill = "Manufacturer") +
-      theme_minimal() +
-      theme(legend.position = "top",
-            panel.grid.major = element_blank(),
-            panel.grid.minor = element_blank(),
-            panel.background = element_blank(),
-            axis.line = element_line(color = "black")) +
-      scale_fill_brewer(palette = "Set3")
+      theme_minimal()
   })
   
   output$results <- DT::renderDataTable({
@@ -113,8 +107,7 @@ server <- function(input, output) {
                x = "Maximum Resolution",
                y = "Frequency",
                fill = "Manufacturer") +
-          theme_minimal() +
-          scale_fill_brewer(palette = "Set3")
+          theme_minimal()
       }, device = "jpg", width = 8, height = 6, units = "in", dpi = 300)
     }
   )
